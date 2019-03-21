@@ -10,14 +10,9 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    
     @IBOutlet weak var playerCard: UIImageView!
     @IBOutlet weak var cpuCard: UIImageView!
-   // @IBOutlet weak var playerScoreLabel: UILabel!
-    
-    
     @IBOutlet weak var playerScoreLabel: UILabel!
-    
     @IBOutlet weak var cpuScoreLabel: UILabel!
     
     var playerScore = 0
@@ -30,14 +25,14 @@ class ViewController: UIViewController {
 
     @IBAction func dealTapped(_ sender: Any) {
         
-        // This gives us numbers from 0 to 12, then we add 2
-        
+        // This gives us numbers from 0 to 12, then we add 2 
      let playerNumber =    arc4random_uniform(13) + 2
      let cpuNumber = arc4random_uniform(13) + 2
         
         // Set the image views 
         playerCard.image = UIImage(named: "card" + String(playerNumber) )
         cpuCard.image = UIImage(named: "card" + String(cpuNumber))
+        
         // Update the score
         if playerNumber > cpuNumber {
             playerScore += 1
